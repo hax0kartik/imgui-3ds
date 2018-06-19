@@ -1,4 +1,5 @@
-// ImGui Test on Nintendo Switch
+// This was originally ported by carstene1ns for Nintendo Switch.
+// 3ds port By Kartik(Pirater12) 
 
 #include <3ds.h>
 #include <citro3d.h>
@@ -93,9 +94,9 @@ int main(int argc, char* argv[])
         }
 		// draw to screen
 		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
-    	C2D_TargetClear(top, C2D_Color32(32, 38, 100, 0xFF));
-        C2D_SceneBegin(top);
-    	C2D_DrawImageAt(image, 0.0f, 0.0f, 0.0f, NULL, 1.0f, 1.0f);
+		C2D_TargetClear(top, C2D_Color32(32, 38, 100, 0xFF));
+		C2D_SceneBegin(top);
+		C2D_DrawImageAt(image, 0.0f, 0.0f, 0.0f, NULL, 1.0f, 1.0f);
 		C3D_FrameEnd(0);
 	}
 
