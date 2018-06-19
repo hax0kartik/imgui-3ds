@@ -42,7 +42,8 @@ int main(int argc, char* argv[])
 	imgui_sw::make_style_fast();
 
 	touchPosition touch;
-	while (aptMainLoop()) {
+	while (aptMainLoop()) 
+	{
 		hidScanInput();
 		u32 kHeld = keysDown();
 		io.DeltaTime = 1.0f / 60.0f;
@@ -85,8 +86,8 @@ int main(int argc, char* argv[])
 
 		for (u32 x = 0; x < width; x++)
 		{
-    		for (u32 y = 0; y < height; y++)
-        	{
+			for (u32 y = 0; y < height; y++)
+			{
 				u32 dstPos = ((((y >> 3) * (512 >> 3) + (x >> 3)) << 6) + ((x & 1) | ((y & 1) << 1) | ((x & 2) << 1) | ((y & 2) << 2) | ((x & 4) << 2) | ((y & 4) << 3))) * 4;
 				u32 srcPos = (y * 320 + x) * 4;
 				memcpy(&((u8*)image.tex->data)[dstPos], &((u8*)pixel_buffer.data())[srcPos], 4);
